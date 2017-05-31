@@ -20,7 +20,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 /**
  * 
  * <p>
- * <b>Crawler</b> is demo to crawl zbj.com, to get some image
+ * <b>Crawler</b> is demo to crawl, to get some image
  * </p>
  *
  * @author <a href="mailto:wentian.he@qq.com">hewentian</a>
@@ -30,7 +30,7 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
  */
 public class Crawler {
 	public static void main(String[] args) throws Exception {
-		List<String> images = getImageUrl("http://shop.zbj.com/14349469/");
+		List<String> images = getImageUrl(""); //TODO 这里写要爬取的目标网页
 
 		System.out.println("images size: " + images.size());
 
@@ -53,7 +53,7 @@ public class Crawler {
 			}
 
 			// download the image
-			FileUtils.copyURLToFile(new URL(image), new File("f:/zbj/" + i + name));
+			FileUtils.copyURLToFile(new URL(image), new File("f:/crawler/" + i + name));
 
 			if (i > 10) {
 				break;
