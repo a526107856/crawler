@@ -69,6 +69,7 @@ public class Crawler {
 		webClient.getOptions().setCssEnabled(false);
 		webClient.getOptions().setTimeout(12000);
 		webClient.getOptions().setThrowExceptionOnScriptError(false);
+		webClient.getOptions().setThrowExceptionOnFailingStatusCode(false);
 		webClient.setAjaxController(new NicelyResynchronizingAjaxController());
 
 		WebRequest webRequest = new WebRequest(new URL(url));
